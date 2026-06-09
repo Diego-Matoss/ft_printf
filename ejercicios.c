@@ -1,4 +1,4 @@
-#include <stdarg.h>
+/* #include <stdarg.h>
 #include <stdio.h>
 
 void print_two_numbers(int dummy, ...)
@@ -98,7 +98,7 @@ void my_print(char *str, ...)
 
 int main(void)
 {
-	/* {
+	{
 		print_two_numbers(0, 2, 3);
 	}
 	{
@@ -109,9 +109,9 @@ int main(void)
 		print_person("si", "Matos", 22);
 		print_person("is", 22, "Matos");
 		print_person("ssi", "Diego", "Matos", 22);
-	} */
+	}
 	{
 		my_print("Hola %s, tu %d letra es %c", "Matos", 24, 'A');
 	}
 	return (0);
-}
+} */
