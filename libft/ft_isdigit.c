@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimatos- <dimatos-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: dimatos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 19:38:09 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:38:11 by dimatos-         ###   ########.fr       */
+/*   Created: 2026/05/19 15:46:45 by dimatos-          #+#    #+#             */
+/*   Updated: 2026/05/19 15:47:04 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "libft.h"
 
-int	ft_printf(char const *, ...)
+/*
+** Tests if a character is a digit (0-9).
+** Returns non-zero if true, 0 if false.
+*/
+int	ft_isdigit(int c)
 {
-	va_list	args;
+	return (c >= '0' && c <= '9');
 }

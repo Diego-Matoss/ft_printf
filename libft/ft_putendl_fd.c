@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimatos- <dimatos-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: dimatos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 19:38:09 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:38:11 by dimatos-         ###   ########.fr       */
+/*   Created: 2026/06/02 13:57:39 by dimatos-          #+#    #+#             */
+/*   Updated: 2026/06/02 13:57:40 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "libft.h"
 
-int	ft_printf(char const *, ...)
+/*
+** Writes a string followed by a newline to a file descriptor.
+** Does nothing if string is NULL.
+*/
+void	ft_putendl_fd(char *s, int fd)
 {
-	va_list	args;
+	if (!s)
+		return ;
+	ft_putstr_fd (s, fd);
+	ft_putchar_fd ('\n', fd);
 }

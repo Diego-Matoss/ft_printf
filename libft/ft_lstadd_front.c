@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimatos- <dimatos-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: dimatos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 19:38:09 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:38:11 by dimatos-         ###   ########.fr       */
+/*   Created: 2026/06/02 19:49:03 by dimatos-          #+#    #+#             */
+/*   Updated: 2026/06/02 19:49:04 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "libft.h"
 
-int	ft_printf(char const *, ...)
+/*
+** Adds a new node at the beginning of a linked list.
+** Does nothing if list or new node is NULL.
+*/
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	va_list	args;
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

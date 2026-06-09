@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimatos- <dimatos-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: dimatos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 19:38:09 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:38:11 by dimatos-         ###   ########.fr       */
+/*   Created: 2026/05/19 16:06:21 by dimatos-          #+#    #+#             */
+/*   Updated: 2026/05/19 16:06:24 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "libft.h"
 
-int	ft_printf(char const *, ...)
+/*
+** Tests if a character is within ASCII range (0-127).
+** Returns non-zero if true, 0 if false.
+*/
+int	ft_isascii(int c)
 {
-	va_list	args;
+	return (c >= 0 && c <= 127);
 }

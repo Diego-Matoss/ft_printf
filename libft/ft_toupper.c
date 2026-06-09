@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimatos- <dimatos-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: dimatos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 19:38:09 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:38:11 by dimatos-         ###   ########.fr       */
+/*   Created: 2026/05/20 14:51:32 by dimatos-          #+#    #+#             */
+/*   Updated: 2026/05/20 14:51:34 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
+#include "libft.h"
 
-int	ft_printf(char const *, ...)
+/*
+** Converts a lowercase letter to uppercase.
+** Returns the uppercase character or original if not lowercase.
+*/
+int	ft_toupper(int c)
 {
-	va_list	args;
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }
