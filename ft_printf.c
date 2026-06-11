@@ -3,54 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dimatos- <dimatos-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: dimatos- <dimatos-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 19:38:09 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:38:11 by dimatos-         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:34:43 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include "libft/libft.h"
+#include "ft_printf.h"
 
 int	ft_printf(char const *str, ...)
 {
 	va_list	args;
 	int		i;
 	int		count;
-	char	*s;
 
 	i = 0;
 	count = 0;
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] == '%' && str[i + 1])
 		{
-			if (str[i + 1] == 's')
-			{
-				s = va_arg(args, char *);
-				ft_putstr_fd(s, 1);
-				count += ft_strlen(s);
-			}
-			else if (str[i + 1] == 'c')
-			{
-				ft_putchar_fd(va_arg(args, int), 1);
-				count++;
-			}
-			else if (str[i + 1] == 'd')
-			{
-				ft_putnbr_fd(va_arg(args, int), 1);
-			}
-			i += 2;
+			i++;
+			if (str[i] == '%')
+				count += print_char(str[i]);
+			else if (str[i] == 'c')
+				count += print_char(va_arg(args, int)); 
+			else if (str[i] == 's')
+				count += print_string(va_arg(args, char *));
+			else if (str[i] == 'd')
+				count += print_number(va_arg(args, int));
 		}
 		else
-		{
-			ft_putchar_fd(str[i], 1);
-			count++;
-			i++;
-		}
+			count += print_char(str[i]);
+		i++;
 	}
 	va_end(args);
 	return (count);
@@ -59,10 +46,14 @@ int	ft_printf(char const *str, ...)
 #include <stdio.h>
 int main(void)
 {
-	ft_printf("Hola\n");
-	ft_printf("Hola %d\n", 12345);
-	ft_printf("%s\n", "Prueba");
-	ft_printf("A %s B\n", "TEST");
+	ft_printf("ft:Hola %d\n", 12345);
+	ft_printf("ft:Hola %% que tal\n");
+	ft_printf("ft:Hola %c\n", 'c');
+	
+
+	printf("Hola %d\n", 12345);
+	printf("Hola %% que tal\n");
+	printf("Hola %c\n", 'c');
 
 	return (0);
 }
