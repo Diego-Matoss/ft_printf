@@ -19,7 +19,9 @@
 
 int	print_char(char c);
 int	print_string(char *str);
-int ft_intlen(int n);
-int print_number(int n);
+int	ft_intlen(int n);
+int	ft_unsignedlen(unsigned int n);
+int	print_number(int n);
+int	print_unsigned_int(unsigned int n);
 
 #endif

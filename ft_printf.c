@@ -29,11 +29,13 @@ int	ft_printf(char const *str, ...)
 			if (str[i] == '%')
 				count += print_char(str[i]);
 			else if (str[i] == 'c')
-				count += print_char(va_arg(args, int)); 
+				count += print_char(va_arg(args, int));
 			else if (str[i] == 's')
 				count += print_string(va_arg(args, char *));
-			else if (str[i] == 'd')
+			else if (str[i] == 'd' || str[i] == 'i')
 				count += print_number(va_arg(args, int));
+			else if (str[i] == 'u')
+				count += print_unsigned_int(va_arg(args, unsigned int));
 		}
 		else
 			count += print_char(str[i]);
@@ -43,17 +45,19 @@ int	ft_printf(char const *str, ...)
 	return (count);
 }
 
+/* #include <limits.h>
 #include <stdio.h>
 int main(void)
 {
-	ft_printf("ft:Hola %d\n", 12345);
+	ft_printf("ft:Hola %i\n", 12345);
 	ft_printf("ft:Hola %% que tal\n");
 	ft_printf("ft:Hola %c\n", 'c');
+	ft_printf("ft:Hola %u\n", 0U);
 	
 
-	printf("Hola %d\n", 12345);
+	printf("Hola %i\n", 12345);
 	printf("Hola %% que tal\n");
 	printf("Hola %c\n", 'c');
-
+	printf("Hola %u\n", 0U);
 	return (0);
-}
+} */

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_intlen(int n)
+int	ft_intlen(int n)
 {
 	int		len;
 	long	num;
@@ -29,6 +29,21 @@ int ft_intlen(int n)
 	while (num > 0)
 	{
 		num /= 10;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_unsignedlen(unsigned int n)
+{
+	int				len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n /= 10;
 		len++;
 	}
 	return (len);
