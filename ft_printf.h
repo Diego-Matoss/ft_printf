@@ -23,5 +23,8 @@ int	ft_intlen(int n);
 int	ft_unsignedlen(unsigned int n);
 int	print_number(int n);
 int	print_unsigned_int(unsigned int n);
+int	print_hex(unsigned int n, char *base);
+int	print_hexpointer(unsigned long n, char *base);
+int	print_pointer(void *ptr, char *base);
 
 #endif

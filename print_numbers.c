@@ -34,3 +34,48 @@ int	print_unsigned_int(unsigned int n)
 	write (1, &c, 1);
 	return (len);
 }
+
+int	print_hex(unsigned int n, char *base)
+{
+	char	c;
+	int		len;
+
+	len = 0;
+	if (n >= 16)
+		len += print_hex(n / 16, base);
+	c = base[n % 16];
+	write (1, &c, 1);
+	len++;
+	return (len);
+}
+
+int	print_hexpointer(unsigned long n, char *base)
+{
+	char	c;
+	int		len;
+
+	len = 0;
+	if (n >= 16)
+		len += print_hexpointer(n / 16, base);
+	c = base[n % 16];
+	write (1, &c, 1);
+	len++;
+	return (len);
+}
+
+int	print_pointer(void *ptr, char *base)
+{
+	int				len;
+	unsigned long	pointer;
+
+	if (!ptr)
+	{
+		write (1, "(nil)", 5);
+		return (5);
+	}
+	pointer = (unsigned long)ptr;
+	write (1, "0x", 2);
+	len = 2;
+	len += print_hexpointer(pointer, base);
+	return (len);
+}
