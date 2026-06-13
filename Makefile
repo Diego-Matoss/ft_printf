@@ -11,7 +11,9 @@ LIBFT_DIR	= libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
 SRCS		= ft_printf.c \
-ft_putnbr_base.c
+	print_numbers.c \
+	print_words.c \
+	utils.c
 
 OBJS		= $(SRCS:.c=.o)
 
