@@ -6,7 +6,7 @@
 /*   By: dimatos- <dimatos-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 19:43:08 by dimatos-          #+#    #+#             */
-/*   Updated: 2026/06/11 20:12:25 by dimatos-         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:33:56 by dimatos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	print_unsigned_int(unsigned int n);
 int	print_hex(unsigned int n, char *base);
 int	print_hexpointer(unsigned long n, char *base);
 int	print_pointer(void *ptr, char *base);
+int	ft_printf(char const *str, ...);
 
 #endif
